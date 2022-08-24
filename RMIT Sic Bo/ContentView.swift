@@ -144,6 +144,25 @@ struct ContentView: View {
                 }
                 
                 Spacer()
+                
+                HStack{
+//                    HStack{
+//                        // MARK: - BET 20 BUTTON
+//                        Button {
+//                            //self.chooseBet20()
+//                        } label: {
+//                            HStack(spacing: 30){
+//                                Text("20")
+//                                    .foregroundColor(Color.white)
+//                                    .background(Color.red)
+//                               Image("chips")
+//                                    .resizable()
+//                                    .opacity(0.5)
+//                            }
+//                            .padding(.horizontal, 20)
+//                        }
+//                    }
+                }
             }
         }
     }

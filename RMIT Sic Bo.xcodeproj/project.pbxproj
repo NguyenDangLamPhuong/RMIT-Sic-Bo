@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04D8E85328B5DEE1009EC556 /* RMIT_Sic_BoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E85228B5DEE1009EC556 /* RMIT_Sic_BoApp.swift */; };
+		04D8E85528B5DEE1009EC556 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E85428B5DEE1009EC556 /* ContentView.swift */; };
+		04D8E85728B5DEE5009EC556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D8E85628B5DEE5009EC556 /* Assets.xcassets */; };
+		04D8E85A28B5DEE5009EC556 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D8E85928B5DEE5009EC556 /* Preview Assets.xcassets */; };
+		04D8E86428B5DEE6009EC556 /* RMIT_Sic_BoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E86328B5DEE6009EC556 /* RMIT_Sic_BoTests.swift */; };
+		04D8E86E28B5DEE6009EC556 /* RMIT_Sic_BoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E86D28B5DEE6009EC556 /* RMIT_Sic_BoUITests.swift */; };
+		04D8E87028B5DEE6009EC556 /* RMIT_Sic_BoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E86F28B5DEE6009EC556 /* RMIT_Sic_BoUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04D8E86028B5DEE6009EC556 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04D8E84728B5DEE1009EC556 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04D8E84E28B5DEE1009EC556;
+			remoteInfo = "RMIT Sic Bo";
+		};
+		04D8E86A28B5DEE6009EC556 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04D8E84728B5DEE1009EC556 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04D8E84E28B5DEE1009EC556;
+			remoteInfo = "RMIT Sic Bo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04D8E84F28B5DEE1009EC556 /* RMIT Sic Bo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RMIT Sic Bo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D8E85228B5DEE1009EC556 /* RMIT_Sic_BoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMIT_Sic_BoApp.swift; sourceTree = "<group>"; };
+		04D8E85428B5DEE1009EC556 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		04D8E85628B5DEE5009EC556 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04D8E85928B5DEE5009EC556 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		04D8E85F28B5DEE6009EC556 /* RMIT Sic BoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RMIT Sic BoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D8E86328B5DEE6009EC556 /* RMIT_Sic_BoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMIT_Sic_BoTests.swift; sourceTree = "<group>"; };
+		04D8E86928B5DEE6009EC556 /* RMIT Sic BoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RMIT Sic BoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D8E86D28B5DEE6009EC556 /* RMIT_Sic_BoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMIT_Sic_BoUITests.swift; sourceTree = "<group>"; };
+		04D8E86F28B5DEE6009EC556 /* RMIT_Sic_BoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMIT_Sic_BoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04D8E84C28B5DEE1009EC556 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D8E85C28B5DEE6009EC556 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D8E86628B5DEE6009EC556 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04D8E84628B5DEE1009EC556 = {
+			isa = PBXGroup;
+			children = (
+				04D8E85128B5DEE1009EC556 /* RMIT Sic Bo */,
+				04D8E86228B5DEE6009EC556 /* RMIT Sic BoTests */,
+				04D8E86C28B5DEE6009EC556 /* RMIT Sic BoUITests */,
+				04D8E85028B5DEE1009EC556 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04D8E85028B5DEE1009EC556 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04D8E84F28B5DEE1009EC556 /* RMIT Sic Bo.app */,
+				04D8E85F28B5DEE6009EC556 /* RMIT Sic BoTests.xctest */,
+				04D8E86928B5DEE6009EC556 /* RMIT Sic BoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04D8E85128B5DEE1009EC556 /* RMIT Sic Bo */ = {
+			isa = PBXGroup;
+			children = (
+				04D8E85228B5DEE1009EC556 /* RMIT_Sic_BoApp.swift */,
+				04D8E85428B5DEE1009EC556 /* ContentView.swift */,
+				04D8E85628B5DEE5009EC556 /* Assets.xcassets */,
+				04D8E85828B5DEE5009EC556 /* Preview Content */,
+			);
+			path = "RMIT Sic Bo";
+			sourceTree = "<group>";
+		};
+		04D8E85828B5DEE5009EC556 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				04D8E85928B5DEE5009EC556 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		04D8E86228B5DEE6009EC556 /* RMIT Sic BoTests */ = {
+			isa = PBXGroup;
+			children = (
+				04D8E86328B5DEE6009EC556 /* RMIT_Sic_BoTests.swift */,
+			);
+			path = "RMIT Sic BoTests";
+			sourceTree = "<group>";
+		};
+		04D8E86C28B5DEE6009EC556 /* RMIT Sic BoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				04D8E86D28B5DEE6009EC556 /* RMIT_Sic_BoUITests.swift */,
+				04D8E86F28B5DEE6009EC556 /* RMIT_Sic_BoUITestsLaunchTests.swift */,
+			);
+			path = "RMIT Sic BoUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04D8E84E28B5DEE1009EC556 /* RMIT Sic Bo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D8E87328B5DEE6009EC556 /* Build configuration list for PBXNativeTarget "RMIT Sic Bo" */;
+			buildPhases = (
+				04D8E84B28B5DEE1009EC556 /* Sources */,
+				04D8E84C28B5DEE1009EC556 /* Frameworks */,
+				04D8E84D28B5DEE1009EC556 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RMIT Sic Bo";
+			productName = "RMIT Sic Bo";
+			productReference = 04D8E84F28B5DEE1009EC556 /* RMIT Sic Bo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04D8E85E28B5DEE6009EC556 /* RMIT Sic BoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D8E87628B5DEE6009EC556 /* Build configuration list for PBXNativeTarget "RMIT Sic BoTests" */;
+			buildPhases = (
+				04D8E85B28B5DEE6009EC556 /* Sources */,
+				04D8E85C28B5DEE6009EC556 /* Frameworks */,
+				04D8E85D28B5DEE6009EC556 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04D8E86128B5DEE6009EC556 /* PBXTargetDependency */,
+			);
+			name = "RMIT Sic BoTests";
+			productName = "RMIT Sic BoTests";
+			productReference = 04D8E85F28B5DEE6009EC556 /* RMIT Sic BoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		04D8E86828B5DEE6009EC556 /* RMIT Sic BoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D8E87928B5DEE6009EC556 /* Build configuration list for PBXNativeTarget "RMIT Sic BoUITests" */;
+			buildPhases = (
+				04D8E86528B5DEE6009EC556 /* Sources */,
+				04D8E86628B5DEE6009EC556 /* Frameworks */,
+				04D8E86728B5DEE6009EC556 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04D8E86B28B5DEE6009EC556 /* PBXTargetDependency */,
+			);
+			name = "RMIT Sic BoUITests";
+			productName = "RMIT Sic BoUITests";
+			productReference = 04D8E86928B5DEE6009EC556 /* RMIT Sic BoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04D8E84728B5DEE1009EC556 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					04D8E84E28B5DEE1009EC556 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					04D8E85E28B5DEE6009EC556 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 04D8E84E28B5DEE1009EC556;
+					};
+					04D8E86828B5DEE6009EC556 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 04D8E84E28B5DEE1009EC556;
+					};
+				};
+			};
+			buildConfigurationList = 04D8E84A28B5DEE1009EC556 /* Build configuration list for PBXProject "RMIT Sic Bo" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04D8E84628B5DEE1009EC556;
+			productRefGroup = 04D8E85028B5DEE1009EC556 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04D8E84E28B5DEE1009EC556 /* RMIT Sic Bo */,
+				04D8E85E28B5DEE6009EC556 /* RMIT Sic BoTests */,
+				04D8E86828B5DEE6009EC556 /* RMIT Sic BoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04D8E84D28B5DEE1009EC556 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D8E85A28B5DEE5009EC556 /* Preview Assets.xcassets in Resources */,
+				04D8E85728B5DEE5009EC556 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D8E85D28B5DEE6009EC556 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D8E86728B5DEE6009EC556 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04D8E84B28B5DEE1009EC556 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D8E85528B5DEE1009EC556 /* ContentView.swift in Sources */,
+				04D8E85328B5DEE1009EC556 /* RMIT_Sic_BoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D8E85B28B5DEE6009EC556 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D8E86428B5DEE6009EC556 /* RMIT_Sic_BoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D8E86528B5DEE6009EC556 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D8E86E28B5DEE6009EC556 /* RMIT_Sic_BoUITests.swift in Sources */,
+				04D8E87028B5DEE6009EC556 /* RMIT_Sic_BoUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04D8E86128B5DEE6009EC556 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04D8E84E28B5DEE1009EC556 /* RMIT Sic Bo */;
+			targetProxy = 04D8E86028B5DEE6009EC556 /* PBXContainerItemProxy */;
+		};
+		04D8E86B28B5DEE6009EC556 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04D8E84E28B5DEE1009EC556 /* RMIT Sic Bo */;
+			targetProxy = 04D8E86A28B5DEE6009EC556 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		04D8E87128B5DEE6009EC556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		04D8E87228B5DEE6009EC556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04D8E87428B5DEE6009EC556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RMIT Sic Bo/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "lamphuong.RMIT-Sic-Bo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04D8E87528B5DEE6009EC556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RMIT Sic Bo/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "lamphuong.RMIT-Sic-Bo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		04D8E87728B5DEE6009EC556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "lamphuong.RMIT-Sic-BoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RMIT Sic Bo.app/RMIT Sic Bo";
+			};
+			name = Debug;
+		};
+		04D8E87828B5DEE6009EC556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "lamphuong.RMIT-Sic-BoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RMIT Sic Bo.app/RMIT Sic Bo";
+			};
+			name = Release;
+		};
+		04D8E87A28B5DEE6009EC556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "lamphuong.RMIT-Sic-BoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "RMIT Sic Bo";
+			};
+			name = Debug;
+		};
+		04D8E87B28B5DEE6009EC556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "lamphuong.RMIT-Sic-BoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "RMIT Sic Bo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04D8E84A28B5DEE1009EC556 /* Build configuration list for PBXProject "RMIT Sic Bo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D8E87128B5DEE6009EC556 /* Debug */,
+				04D8E87228B5DEE6009EC556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04D8E87328B5DEE6009EC556 /* Build configuration list for PBXNativeTarget "RMIT Sic Bo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D8E87428B5DEE6009EC556 /* Debug */,
+				04D8E87528B5DEE6009EC556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04D8E87628B5DEE6009EC556 /* Build configuration list for PBXNativeTarget "RMIT Sic BoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D8E87728B5DEE6009EC556 /* Debug */,
+				04D8E87828B5DEE6009EC556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04D8E87928B5DEE6009EC556 /* Build configuration list for PBXNativeTarget "RMIT Sic BoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D8E87A28B5DEE6009EC556 /* Debug */,
+				04D8E87B28B5DEE6009EC556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04D8E84728B5DEE1009EC556 /* Project object */;
+}

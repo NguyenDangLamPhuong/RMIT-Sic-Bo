@@ -14,6 +14,8 @@
 		04D8E86428B5DEE6009EC556 /* RMIT_Sic_BoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E86328B5DEE6009EC556 /* RMIT_Sic_BoTests.swift */; };
 		04D8E86E28B5DEE6009EC556 /* RMIT_Sic_BoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E86D28B5DEE6009EC556 /* RMIT_Sic_BoUITests.swift */; };
 		04D8E87028B5DEE6009EC556 /* RMIT_Sic_BoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E86F28B5DEE6009EC556 /* RMIT_Sic_BoUITestsLaunchTests.swift */; };
+		04D8E88A28B60ABF009EC556 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E88928B60ABF009EC556 /* Modifiers.swift */; };
+		04D8E88C28B60B5D009EC556 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E88B28B60B5D009EC556 /* TitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		04D8E88428B5FF47009EC556 /* winning.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = winning.mp3; sourceTree = "<group>"; };
 		04D8E88528B5FF47009EC556 /* drum-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "drum-music.mp3"; sourceTree = "<group>"; };
 		04D8E88628B5FF47009EC556 /* spin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spin.mp3; sourceTree = "<group>"; };
+		04D8E88928B60ABF009EC556 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		04D8E88B28B60B5D009EC556 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 		04D8E84628B5DEE1009EC556 = {
 			isa = PBXGroup;
 			children = (
+				04D8E88D28B60BE9009EC556 /* Views */,
+				04D8E88828B60AA1009EC556 /* Helps */,
 				04D8E85128B5DEE1009EC556 /* RMIT Sic Bo */,
 				04D8E86228B5DEE6009EC556 /* RMIT Sic BoTests */,
 				04D8E86C28B5DEE6009EC556 /* RMIT Sic BoUITests */,
@@ -149,6 +155,22 @@
 				04D8E88428B5FF47009EC556 /* winning.mp3 */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		04D8E88828B60AA1009EC556 /* Helps */ = {
+			isa = PBXGroup;
+			children = (
+				04D8E88928B60ABF009EC556 /* Modifiers.swift */,
+			);
+			path = Helps;
+			sourceTree = "<group>";
+		};
+		04D8E88D28B60BE9009EC556 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04D8E88B28B60B5D009EC556 /* TitleView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,7 +304,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				04D8E85528B5DEE1009EC556 /* ContentView.swift in Sources */,
+				04D8E88A28B60ABF009EC556 /* Modifiers.swift in Sources */,
 				04D8E85328B5DEE1009EC556 /* RMIT_Sic_BoApp.swift in Sources */,
+				04D8E88C28B60B5D009EC556 /* TitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

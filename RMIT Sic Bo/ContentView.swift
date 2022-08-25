@@ -8,61 +8,161 @@
 import SwiftUI
 
 struct ContentView: View {
-    private var dices = ["1", "2", "3", "4", "5", "6"]
+    //PROPERTIES
+     let dices = ["1", "2", "3", "4", "5", "6"]
     @State private var numbers = [0, 1, 2]
-    private var betAmount = 10
-
-    @State private var credits = 1000
+    @State private var betAmount = 10
+    @State private var score = UserDefaults.standard.integer(forKey: "score")
+    @State private var credits = 10
+    
+    @State private var isChooseBet10 = true
+    @State private var isChooseBet20 = false
+    
+    @State private var showEndGameModel = false
+    
+    //GAME LOGIC FUNCTION
+    
+    //PLAY BUTTON LOGIC
+    func playButton(){
+        //change the images
+        numbers = numbers.map({ _ in
+            Int.random(in: 0...dices.count - 1)
+        })
+    }
+    //WINNING LOGIC
+    func checkSmallWinning(){
+        //check triple dice (all three dice land on the same number, everybody loses)
+        var _ = print(self.numbers[0] + self.numbers[1] + self.numbers[2] + 3)
+        if numbers[0] == numbers[1] && numbers[1] == numbers[2] && numbers[2] == numbers[0]{
+            playerLose()
+            
+        }
+        else{
+            //check winnings
+            if numbers[0] + numbers[1] + numbers[2] + 3 >= 4 && numbers[0] + numbers[1] + numbers[2] + 3 <= 10 {
+                 
+                playerWin()
+                if credits > score{
+                    newScoreUpdating()
+                }
+            }
+            else{
+                playerLose()
+                
+            }
+        }
+    }
+    func checkBigWinning(){
+        //check triple dice (all three dice land on the same number, everybody loses)
+        var _ = print(self.numbers[0] + self.numbers[1] + self.numbers[2] + 3)
+        if numbers[0] == numbers[1] && numbers[1] == numbers[2] && numbers[2] == numbers[0]{
+            playerLose()
+        }
+        else{
+            //check winnings
+            if numbers[0] + numbers[1] + numbers[2] + 3 >= 11 && numbers[0] + numbers[1] + numbers[2] + 3 <= 17 {
+                
+                playerWin()
+                if credits > score{
+                    newScoreUpdating()
+                }
+                
+            }
+            else{
+                playerLose()
+            }
+        }
+    }
+    
+    //PLAYER WIN
+    func playerWin(){
+        credits += betAmount
+    }
+    
+    //PLAYER LOSE
+    func playerLose(){
+        credits -= betAmount
+    }
+    
+    //UPDATE NEW SCORE LOGIC
+    func newScoreUpdating(){
+        score = credits
+        UserDefaults.standard.set( score, forKey: "score" )
+    }
+    
+    //BET LOGIC
+    func bet10(){
+        betAmount = 10
+        isChooseBet10 = true
+        isChooseBet20 = false
+    }
+    func bet20(){
+        betAmount = 20
+        isChooseBet10 = false
+        isChooseBet20 = true
+    }
+    //GAMEO OVER LOGIC
+    func isEndGame(){
+        if credits <= 0 {
+            showEndGameModel = true
+        }
+    }
+    
+    //RESTE GAME LOGIC
     var body: some View {
         ZStack{
             //background
-            Rectangle().foregroundColor(Color(red:200/255, green: 143/255, blue:32/255))
+            Rectangle().foregroundColor(Color("ColorDarkYellow"))
                 .edgesIgnoringSafeArea(.all)
-            Rectangle().foregroundColor(Color(red: 228/255, green:195/255,blue:76/255))
+            Rectangle().foregroundColor(Color("ColorYellow"))
                 .rotationEffect(Angle(degrees: 45)).edgesIgnoringSafeArea(.all
                 )
+//            Rectangle().foregroundColor(Color(red:200/255, green: 143/255, blue:32/255))
+//                .edgesIgnoringSafeArea(.all)
+//            Rectangle().foregroundColor(Color(red: 228/255, green:195/255,blue:76/255))
+//                .rotationEffect(Angle(degrees: 45)).edgesIgnoringSafeArea(.all
+//                )
+//            LinearGradient(gradient: Gradient(colors: [Color("ColorPink"), Color("ColorOrange")]), startPoint: .top, endPoint: .bottom)
+//                .edgesIgnoringSafeArea(.all)
             VStack{
                 Spacer()
                 //title
                 HStack{
-                    Image(systemName: "star.fill").foregroundColor(.yellow)
-                    Text("RMIT Sic Bo").bold()
-                        .foregroundColor(.white)
-                    Image(systemName: "star.fill").foregroundColor(.yellow)
+                    TitleView()
                 }.scaleEffect(2)
                 
                 Spacer()
                 
-                //Credits counter
-                Text("Credits: " + String(credits) )
-                    .foregroundColor(.black)
-                    .padding(.all, 10)
-                    .background(Color.white.opacity(0.5))
-                    .cornerRadius(20
-                    )
+                HStack{
+                    //Credits counter
+                    Text("Credits: ".uppercased() + String(credits) )
+                        .modifier(scoreStyle())
+                    
+                    Spacer()
+                    
+                    //Credits counter
+                    Text("High Score: ".uppercased() + String(score) )
+                        .modifier(scoreStyle())
+                }.padding()
+                
                 Spacer()
+                
                 //Cards
                 HStack{
                     Spacer()
                     
                     Image(dices[numbers[0]])
                         .resizable()
+                        .modifier(diceImageModifier())
                         .aspectRatio(1, contentMode: .fit)
-                        .background(Color.white)
-                        .opacity(0.5)
-                        .cornerRadius(20)
                     Image(dices[numbers[1]])
                         .resizable()
+                        .modifier(diceImageModifier())
                         .aspectRatio(1, contentMode: .fit)
-                        .background(Color.white)
-                        .opacity(0.5)
-                        .cornerRadius(20)
                     Image(dices[numbers[2]])
                         .resizable()
+                        .modifier(diceImageModifier())
                         .aspectRatio(1, contentMode: .fit)
-                        .background(Color.white)
-                        .opacity(0.5)
-                        .cornerRadius(20)
                     Spacer()
                 }
                 Spacer()
@@ -70,29 +170,15 @@ struct ContentView: View {
                 //button
                 HStack{
                     Button(action: {
-                        //change the images
-                        self.numbers[0] = Int.random(in: 0...self.dices.count-1)
-                        self.numbers[1] = Int.random(in: 0...self.dices.count-1)
-                        self.numbers[2] = Int.random(in: 0...self.dices.count-1)
+                        //click small button to bet small
+                        self.playButton()
                         
-                        //check triple dice (all three dice land on the same number, everybody loses)
-                        if self.numbers[0] == self.numbers[1] && self.numbers[1] == self.numbers[2] && self.numbers[2] == self.numbers[0]{
-                            
-                            //lose
-                            self.credits -= self.betAmount
-                        }
-                        else{
-                            //check winnings
-                            if self.numbers[0] + self.numbers[1] + self.numbers[2] >= 4 && self.numbers[0] + self.numbers[1] + self.numbers[2] <= 10 {
-                                 
-                                //won
-                                self.credits += self.betAmount * 10
-                            }
-                            else{
-                                //lose
-                                self.credits -= self.betAmount
-                            }
-                        }
+                        //check winning
+                        self.checkSmallWinning()
+                        
+                        //Game over
+                        self.isEndGame()
+
                     })
                     {
                      Text("Small")
@@ -105,64 +191,106 @@ struct ContentView: View {
                         
                     }
                     Button(action: {
+                        //click small button to bet small
+                        self.playButton()
                         
-                        //change the images
-                        self.numbers[0] = Int.random(in: 0...self.dices.count-1)
-                        self.numbers[1] = Int.random(in: 0...self.dices.count-1)
-                        self.numbers[2] = Int.random(in: 0...self.dices.count-1)
+                        //check winning
+                        self.checkBigWinning()
                         
-                        //check triple dice (all three dice land on the same number, everybody loses)
-                        if self.numbers[0] == self.numbers[1] && self.numbers[1] == self.numbers[2] && self.numbers[2] == self.numbers[0]{
-                            
-                            //lose
-                            self.credits -= self.betAmount
-                        }
-                        else{
-                            //check winnings
-                            if self.numbers[0] + self.numbers[1] + self.numbers[2] >= 11 && self.numbers[0] + self.numbers[1] + self.numbers[2] <= 17 {
-                                 
-                                //won
-                                self.credits += self.betAmount * 10
-                            }
-                            else{
-                                //lose
-                                self.credits -= self.betAmount
-                            }
-                        }
-                        
+                        //Game over
+                        self.isEndGame()
                     })
                     {
-                     Text("Biggg")
+                     Text("Big")
                             .bold()
                             .foregroundColor(.white)
                             .padding(.all, 10)
                             .padding([.leading, .trailing],30)
                             .background(Color.pink)
                             .cornerRadius(20)
-                        
                     }
                 }
                 
                 Spacer()
                 
                 HStack{
-//                    HStack{
-//                        // MARK: - BET 20 BUTTON
-//                        Button {
-//                            //self.chooseBet20()
-//                        } label: {
-//                            HStack(spacing: 30){
-//                                Text("20")
-//                                    .foregroundColor(Color.white)
-//                                    .background(Color.red)
-//                               Image("chips")
-//                                    .resizable()
-//                                    .opacity(0.5)
-//                            }
-//                            .padding(.horizontal, 20)
-//                        }
-//                    }
+                    
+                    Button {
+                        self.bet20()
+                    } label: {
+                        HStack{
+                            Text("20")
+                                .modifier(BetCapsuleModifier())
+                            Image("chips")
+                                .resizable()
+                            
+                                .opacity(isChooseBet20 ? 1 : 0)
+                                .modifier(ChipModifier())
+                        }
+                    }
+                    
+                    Spacer()
+                    
+                    Button {
+                        self.bet10()
+                    } label: {
+                        HStack{
+                            Image("chips")
+                                .resizable()
+                                .opacity(isChooseBet10 ? 1 : 0)
+                                .modifier(ChipModifier())
+                            Text("10")
+                                .modifier(BetCapsuleModifier())
+                        }
+                    }
                 }
+            }
+            .padding()
+            .blur(radius:  showEndGameModel ? 5 : 0 , opaque: false)
+            if showEndGameModel {
+                ZStack{
+                    Color("ColorBlackTransparent")
+                        .edgesIgnoringSafeArea(.all)
+                    VStack{
+                        Text("Game over")
+                            .font(.system(.title, design: .rounded ))
+                            .fontWeight(.heavy)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(minWidth: 280, idealWidth: 280, maxWidth: 320)
+                            .background(Color.red)
+                        Spacer()
+                        VStack{
+                            Image("chips")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 200)
+                            Text("You lost all your money!!! \n Good luck next time")
+                                .font(.system(.body, design: .rounded))
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.center)
+                            Button{
+                                self.showEndGameModel = false
+                                self.credits = 100
+                            } label: {
+                                Text("New Game" .uppercased())
+                                    .foregroundColor(.white)
+                                    .fontWeight(.heavy)
+                                    .padding(.vertical, 10)
+                                    .padding(.horizontal, 20)
+                            }
+                            .background(Capsule().fill(.red))
+                            
+                        }
+                        Spacer()
+                    }
+                    
+                        
+                }
+                .frame(minWidth: 280, idealWidth: 280, maxWidth: 320, minHeight: 280, idealHeight: 300, maxHeight: 350, alignment: .center)
+                .background(Color.blue)
+                .cornerRadius(20)
+                
             }
         }
     }

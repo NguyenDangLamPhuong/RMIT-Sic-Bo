@@ -42,7 +42,7 @@ struct BetCapsuleModifier: ViewModifier{
             .padding(.horizontal, 15)
             .modifier(ShadowModifier())
             .background(Capsule().fill(
-                LinearGradient(gradient: Gradient(colors: [Color.red,Color.blue]), startPoint: .top, endPoint: .bottom)
+                LinearGradient(gradient: Gradient(colors: [Color("ColorWelcomeYellow"),Color(uiColor: UIColor(red: 1.00, green: 0.34, blue: 0.34, alpha: 1.00))]), startPoint: .top, endPoint: .bottom)
             ))
     }
 }

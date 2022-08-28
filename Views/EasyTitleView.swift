@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct TitleView: View {
+struct EasyTitleView: View {
     var body: some View{
         Image(systemName: "star.fill").foregroundColor(.yellow)
-        Text("Tai Sai")
+        Text("Easy round")
             .bold()
             .font(.system(size: 20, design: .rounded))
             .foregroundColor(.white)

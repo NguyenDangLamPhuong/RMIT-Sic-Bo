@@ -1,147 +1,43 @@
 //
-//  ContentView.swift
+//  GameView.swift
 //  RMIT Sic Bo
 //
-//  Created by Mac on 24/08/2022.
+//  Created by Mac on 27/08/2022.
 //
 
 import SwiftUI
 
-struct ContentView: View {
-    //PROPERTIES
-     let dices = ["1", "2", "3", "4", "5", "6"]
-    @State private var numbers = [0, 1, 2]
-    @State private var betAmount = 10
-    @State private var score = UserDefaults.standard.integer(forKey: "score")
-    @State private var credits = 10
-    
-    @State private var isChooseBet10 = true
-    @State private var isChooseBet20 = false
-    
-    @State private var showEndGameModel = false
-    
-    //GAME LOGIC FUNCTION
-    
-    //PLAY BUTTON LOGIC
-    func playButton(){
-        //change the images
-        numbers = numbers.map({ _ in
-            Int.random(in: 0...dices.count - 1)
-        })
-    }
-    //WINNING LOGIC
-    func checkSmallWinning(){
-        //check triple dice (all three dice land on the same number, everybody loses)
-        var _ = print(self.numbers[0] + self.numbers[1] + self.numbers[2] + 3)
-        if numbers[0] == numbers[1] && numbers[1] == numbers[2] && numbers[2] == numbers[0]{
-            playerLose()
-            
-        }
-        else{
-            //check winnings
-            if numbers[0] + numbers[1] + numbers[2] + 3 >= 4 && numbers[0] + numbers[1] + numbers[2] + 3 <= 10 {
-                 
-                playerWin()
-                if credits > score{
-                    newScoreUpdating()
-                }
-            }
-            else{
-                playerLose()
-                
-            }
-        }
-    }
-    func checkBigWinning(){
-        //check triple dice (all three dice land on the same number, everybody loses)
-        var _ = print(self.numbers[0] + self.numbers[1] + self.numbers[2] + 3)
-        if numbers[0] == numbers[1] && numbers[1] == numbers[2] && numbers[2] == numbers[0]{
-            playerLose()
-        }
-        else{
-            //check winnings
-            if numbers[0] + numbers[1] + numbers[2] + 3 >= 11 && numbers[0] + numbers[1] + numbers[2] + 3 <= 17 {
-                
-                playerWin()
-                if credits > score{
-                    newScoreUpdating()
-                }
-                
-            }
-            else{
-                playerLose()
-            }
-        }
-    }
-    
-    //PLAYER WIN
-    func playerWin(){
-        credits += betAmount
-    }
-    
-    //PLAYER LOSE
-    func playerLose(){
-        credits -= betAmount
-    }
-    
-    //UPDATE NEW SCORE LOGIC
-    func newScoreUpdating(){
-        score = credits
-        UserDefaults.standard.set( score, forKey: "score" )
-    }
-    
-    //BET LOGIC
-    func bet10(){
-        betAmount = 10
-        isChooseBet10 = true
-        isChooseBet20 = false
-    }
-    func bet20(){
-        betAmount = 20
-        isChooseBet10 = false
-        isChooseBet20 = true
-    }
-    //GAMEO OVER LOGIC
-    func isEndGame(){
-        if credits <= 0 {
-            showEndGameModel = true
-        }
-    }
+struct GameView: View {
+    @StateObject private var viewModel = GameViewModel()
     
     //RESTE GAME LOGIC
     var body: some View {
         ZStack{
             //background
-            Rectangle().foregroundColor(Color("ColorDarkYellow"))
-                .edgesIgnoringSafeArea(.all)
-            Rectangle().foregroundColor(Color("ColorYellow"))
-                .rotationEffect(Angle(degrees: 45)).edgesIgnoringSafeArea(.all
-                )
-//            Rectangle().foregroundColor(Color(red:200/255, green: 143/255, blue:32/255))
+//            Rectangle().foregroundColor(Color("ColorDarkYellow"))
 //                .edgesIgnoringSafeArea(.all)
-//            Rectangle().foregroundColor(Color(red: 228/255, green:195/255,blue:76/255))
+//            Rectangle().foregroundColor(Color("ColorYellow"))
 //                .rotationEffect(Angle(degrees: 45)).edgesIgnoringSafeArea(.all
 //                )
-//            LinearGradient(gradient: Gradient(colors: [Color("ColorPink"), Color("ColorOrange")]), startPoint: .top, endPoint: .bottom)
-//                .edgesIgnoringSafeArea(.all)
+            LinearGradient(gradient: Gradient(colors: [Color("ColorWelcomeYellow"), Color("ColorGreen")]), startPoint: .top, endPoint: .bottom)              .edgesIgnoringSafeArea(.all)
+
             VStack{
-                Spacer()
                 //title
                 HStack{
-                    TitleView()
+                    EasyTitleView()
                 }.scaleEffect(2)
                 
                 Spacer()
                 
                 HStack{
                     //Credits counter
-                    Text("Credits: ".uppercased() + String(credits) )
+                    Text("Credits: ".uppercased() + String(viewModel.credits) )
                         .modifier(scoreStyle())
                     
                     Spacer()
                     
                     //Credits counter
-                    Text("High Score: ".uppercased() + String(score) )
+                    Text("High Score: ".uppercased() + String(viewModel.score) )
                         .modifier(scoreStyle())
                 }.padding()
                 
@@ -151,15 +47,17 @@ struct ContentView: View {
                 HStack{
                     Spacer()
                     
-                    Image(dices[numbers[0]])
+                    Image(viewModel.dices[viewModel.numbers[0]])
                         .resizable()
                         .modifier(diceImageModifier())
                         .aspectRatio(1, contentMode: .fit)
-                    Image(dices[numbers[1]])
+//                        .animation(<#T##animation: Animation?##Animation?#>, value: <#T##Equatable#>)
+                    
+                    Image(viewModel.dices[viewModel.numbers[1]])
                         .resizable()
                         .modifier(diceImageModifier())
                         .aspectRatio(1, contentMode: .fit)
-                    Image(dices[numbers[2]])
+                    Image(viewModel.dices[viewModel.numbers[2]])
                         .resizable()
                         .modifier(diceImageModifier())
                         .aspectRatio(1, contentMode: .fit)
@@ -171,13 +69,13 @@ struct ContentView: View {
                 HStack{
                     Button(action: {
                         //click small button to bet small
-                        self.playButton()
+                        viewModel.playButton()
                         
                         //check winning
-                        self.checkSmallWinning()
+                        viewModel.checkSmallWinning()
                         
                         //Game over
-                        self.isEndGame()
+                        viewModel.isEndGame()
 
                     })
                     {
@@ -186,19 +84,20 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .padding(.all, 10)
                             .padding([.leading, .trailing],30)
-                            .background(Color.pink)
+                            .background(Color("ColorPink"))
                             .cornerRadius(20)
+                            .modifier(ShadowModifier())
                         
                     }
                     Button(action: {
                         //click small button to bet small
-                        self.playButton()
+                        viewModel.playButton()
                         
                         //check winning
-                        self.checkBigWinning()
+                        viewModel.checkBigWinning()
                         
                         //Game over
-                        self.isEndGame()
+                        viewModel.isEndGame()
                     })
                     {
                      Text("Big")
@@ -206,8 +105,9 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .padding(.all, 10)
                             .padding([.leading, .trailing],30)
-                            .background(Color.pink)
+                            .background(Color("ColorPink"))
                             .cornerRadius(20)
+                            .modifier(ShadowModifier())
                     }
                 }
                 
@@ -216,7 +116,7 @@ struct ContentView: View {
                 HStack{
                     
                     Button {
-                        self.bet20()
+                        viewModel.bet20()
                     } label: {
                         HStack{
                             Text("20")
@@ -224,7 +124,7 @@ struct ContentView: View {
                             Image("chips")
                                 .resizable()
                             
-                                .opacity(isChooseBet20 ? 1 : 0)
+                                .opacity(viewModel.isChooseBet20 ? 1 : 0)
                                 .modifier(ChipModifier())
                         }
                     }
@@ -232,12 +132,12 @@ struct ContentView: View {
                     Spacer()
                     
                     Button {
-                        self.bet10()
+                        viewModel.bet10()
                     } label: {
                         HStack{
                             Image("chips")
                                 .resizable()
-                                .opacity(isChooseBet10 ? 1 : 0)
+                                .opacity(viewModel.isChooseBet10 ? 1 : 0)
                                 .modifier(ChipModifier())
                             Text("10")
                                 .modifier(BetCapsuleModifier())
@@ -246,8 +146,8 @@ struct ContentView: View {
                 }
             }
             .padding()
-            .blur(radius:  showEndGameModel ? 5 : 0 , opaque: false)
-            if showEndGameModel {
+            .blur(radius:  viewModel.showEndGameModel ? 5 : 0 , opaque: false)
+            if viewModel.showEndGameModel {
                 ZStack{
                     Color("ColorBlackTransparent")
                         .edgesIgnoringSafeArea(.all)
@@ -270,8 +170,8 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                                 .multilineTextAlignment(.center)
                             Button{
-                                self.showEndGameModel = false
-                                self.credits = 100
+                                viewModel.showEndGameModel = false
+                                viewModel.credits = 100
                             } label: {
                                 Text("New Game" .uppercased())
                                     .foregroundColor(.white)
@@ -296,8 +196,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        GameView()
     }
 }

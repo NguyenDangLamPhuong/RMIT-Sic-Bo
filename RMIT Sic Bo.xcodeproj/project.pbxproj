@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0495993228B9088E008366DC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495993128B9088E008366DC /* MenuView.swift */; };
+		0495993528B97371008366DC /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495993428B97371008366DC /* WelcomeView.swift */; };
+		0495993728B97381008366DC /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495993628B97381008366DC /* GreetingView.swift */; };
+		0495993928B982B8008366DC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495993828B982B8008366DC /* GameView.swift */; };
+		0495993B28B98D9F008366DC /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0495993A28B98D9F008366DC /* GuideView.swift */; };
+		04C510F228B76E570060C42B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C510F128B76E570060C42B /* HomeView.swift */; };
 		04D8E85328B5DEE1009EC556 /* RMIT_Sic_BoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E85228B5DEE1009EC556 /* RMIT_Sic_BoApp.swift */; };
 		04D8E85528B5DEE1009EC556 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E85428B5DEE1009EC556 /* ContentView.swift */; };
 		04D8E85728B5DEE5009EC556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D8E85628B5DEE5009EC556 /* Assets.xcassets */; };
@@ -15,7 +21,11 @@
 		04D8E86E28B5DEE6009EC556 /* RMIT_Sic_BoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E86D28B5DEE6009EC556 /* RMIT_Sic_BoUITests.swift */; };
 		04D8E87028B5DEE6009EC556 /* RMIT_Sic_BoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E86F28B5DEE6009EC556 /* RMIT_Sic_BoUITestsLaunchTests.swift */; };
 		04D8E88A28B60ABF009EC556 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E88928B60ABF009EC556 /* Modifiers.swift */; };
-		04D8E88C28B60B5D009EC556 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E88B28B60B5D009EC556 /* TitleView.swift */; };
+		04D8E88C28B60B5D009EC556 /* EasyTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8E88B28B60B5D009EC556 /* EasyTitleView.swift */; };
+		04E4524528BB5A9C0056221E /* HardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E4524428BB5A9C0056221E /* HardGameView.swift */; };
+		04E4524828BB5CFD0056221E /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E4524728BB5CFD0056221E /* GameViewModel.swift */; };
+		04E4524A28BB61AB0056221E /* HardGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E4524928BB61AB0056221E /* HardGameViewModel.swift */; };
+		04E4524C28BB64B50056221E /* HardTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E4524B28BB64B50056221E /* HardTitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0495993128B9088E008366DC /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		0495993428B97371008366DC /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		0495993628B97381008366DC /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
+		0495993828B982B8008366DC /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		0495993A28B98D9F008366DC /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
+		04C510F128B76E570060C42B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		04D8E84F28B5DEE1009EC556 /* RMIT Sic Bo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RMIT Sic Bo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D8E85228B5DEE1009EC556 /* RMIT_Sic_BoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMIT_Sic_BoApp.swift; sourceTree = "<group>"; };
 		04D8E85428B5DEE1009EC556 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,7 +71,11 @@
 		04D8E88528B5FF47009EC556 /* drum-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "drum-music.mp3"; sourceTree = "<group>"; };
 		04D8E88628B5FF47009EC556 /* spin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spin.mp3; sourceTree = "<group>"; };
 		04D8E88928B60ABF009EC556 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
-		04D8E88B28B60B5D009EC556 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		04D8E88B28B60B5D009EC556 /* EasyTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyTitleView.swift; sourceTree = "<group>"; };
+		04E4524428BB5A9C0056221E /* HardGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardGameView.swift; sourceTree = "<group>"; };
+		04E4524728BB5CFD0056221E /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		04E4524928BB61AB0056221E /* HardGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardGameViewModel.swift; sourceTree = "<group>"; };
+		04E4524B28BB64B50056221E /* HardTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardTitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +103,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0495993328B9734D008366DC /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				0495993428B97371008366DC /* WelcomeView.swift */,
+				0495993628B97381008366DC /* GreetingView.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 		04D8E84628B5DEE1009EC556 = {
 			isa = PBXGroup;
 			children = (
+				04E4524628BB5CDE0056221E /* Model */,
+				0495993328B9734D008366DC /* Welcome */,
 				04D8E88D28B60BE9009EC556 /* Views */,
 				04D8E88828B60AA1009EC556 /* Helps */,
 				04D8E85128B5DEE1009EC556 /* RMIT Sic Bo */,
@@ -109,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				04D8E85228B5DEE1009EC556 /* RMIT_Sic_BoApp.swift */,
-				04D8E85428B5DEE1009EC556 /* ContentView.swift */,
 				04D8E85628B5DEE5009EC556 /* Assets.xcassets */,
 				04D8E85828B5DEE5009EC556 /* Preview Content */,
 			);
@@ -168,9 +198,25 @@
 		04D8E88D28B60BE9009EC556 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				04D8E88B28B60B5D009EC556 /* TitleView.swift */,
+				04C510F128B76E570060C42B /* HomeView.swift */,
+				04D8E85428B5DEE1009EC556 /* ContentView.swift */,
+				04D8E88B28B60B5D009EC556 /* EasyTitleView.swift */,
+				0495993128B9088E008366DC /* MenuView.swift */,
+				0495993828B982B8008366DC /* GameView.swift */,
+				0495993A28B98D9F008366DC /* GuideView.swift */,
+				04E4524428BB5A9C0056221E /* HardGameView.swift */,
+				04E4524B28BB64B50056221E /* HardTitleView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		04E4524628BB5CDE0056221E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04E4524728BB5CFD0056221E /* GameViewModel.swift */,
+				04E4524928BB61AB0056221E /* HardGameViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,10 +349,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E4524828BB5CFD0056221E /* GameViewModel.swift in Sources */,
 				04D8E85528B5DEE1009EC556 /* ContentView.swift in Sources */,
+				0495993228B9088E008366DC /* MenuView.swift in Sources */,
 				04D8E88A28B60ABF009EC556 /* Modifiers.swift in Sources */,
 				04D8E85328B5DEE1009EC556 /* RMIT_Sic_BoApp.swift in Sources */,
-				04D8E88C28B60B5D009EC556 /* TitleView.swift in Sources */,
+				0495993928B982B8008366DC /* GameView.swift in Sources */,
+				04E4524528BB5A9C0056221E /* HardGameView.swift in Sources */,
+				04C510F228B76E570060C42B /* HomeView.swift in Sources */,
+				0495993728B97381008366DC /* GreetingView.swift in Sources */,
+				04E4524A28BB61AB0056221E /* HardGameViewModel.swift in Sources */,
+				04D8E88C28B60B5D009EC556 /* EasyTitleView.swift in Sources */,
+				0495993528B97371008366DC /* WelcomeView.swift in Sources */,
+				04E4524C28BB64B50056221E /* HardTitleView.swift in Sources */,
+				0495993B28B98D9F008366DC /* GuideView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

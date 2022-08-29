@@ -61,7 +61,7 @@ struct GreetingView: View {
                     VStack{
                         Spacer()
                         VStack{
-                            Image("lose_money")
+                            Image("continue")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 200)
@@ -109,7 +109,7 @@ struct GreetingView: View {
                 
             }
         }
-//        .onAppear(perform: {playSound(sound: "welcome", type: "mp3")})
+        .onAppear(perform: {playSound(sound: "welcome", type: "mp3")})
     }
 }
 

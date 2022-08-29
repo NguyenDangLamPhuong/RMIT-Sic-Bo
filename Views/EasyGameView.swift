@@ -7,18 +7,12 @@
 
 import SwiftUI
 
-struct GameView: View {
+struct EasyGameView: View {
     @StateObject private var viewModel = GameViewModel()
-    
-    //RESTE GAME LOGIC
+   
     var body: some View {
         ZStack{
             //background
-//            Rectangle().foregroundColor(Color("ColorDarkYellow"))
-//                .edgesIgnoringSafeArea(.all)
-//            Rectangle().foregroundColor(Color("ColorYellow"))
-//                .rotationEffect(Angle(degrees: 45)).edgesIgnoringSafeArea(.all
-//                )
             LinearGradient(gradient: Gradient(colors: [Color("ColorWelcomeYellow"), Color("ColorGreen")]), startPoint: .top, endPoint: .bottom)              .edgesIgnoringSafeArea(.all)
 
             VStack{
@@ -31,13 +25,13 @@ struct GameView: View {
                 
                 HStack{
                     //Credits counter
-                    Text("Credits: ".uppercased() + String(viewModel.credits) )
+                    Text("Credits: ".uppercased() + String(viewModel.currentCredits) )
                         .modifier(scoreStyle())
                     
                     Spacer()
                     
-                    //Credits counter
-                    Text("High Score: ".uppercased() + String(viewModel.score) )
+                    //High score counter
+                    Text("High Score: ".uppercased() + String(viewModel.highscore) )
                         .modifier(scoreStyle())
                 }.padding()
                 
@@ -51,7 +45,6 @@ struct GameView: View {
                         .resizable()
                         .modifier(diceImageModifier())
                         .aspectRatio(1, contentMode: .fit)
-//                        .animation(<#T##animation: Animation?##Animation?#>, value: <#T##Equatable#>)
                     
                     Image(viewModel.dices[viewModel.numbers[1]])
                         .resizable()
@@ -87,7 +80,7 @@ struct GameView: View {
                             .background(Color("ColorPink"))
                             .cornerRadius(20)
                             .modifier(ShadowModifier())
-                        
+                            
                     }
                     Button(action: {
                         //click small button to bet small
@@ -108,22 +101,23 @@ struct GameView: View {
                             .background(Color("ColorPink"))
                             .cornerRadius(20)
                             .modifier(ShadowModifier())
+                            .frame( width: 150, height:80)
                     }
                 }
                 
                 Spacer()
                 
                 HStack{
-                    
+                    //player bet 20 coins
                     Button {
                         viewModel.bet20()
+                        playSound(sound: "bet-coin", type: "wav")
                     } label: {
                         HStack{
                             Text("20")
                                 .modifier(BetCapsuleModifier())
                             Image("chips")
                                 .resizable()
-                            
                                 .opacity(viewModel.isChooseBet20 ? 1 : 0)
                                 .modifier(ChipModifier())
                         }
@@ -131,8 +125,10 @@ struct GameView: View {
                     
                     Spacer()
                     
+                    //player bet 10 coins
                     Button {
                         viewModel.bet10()
+                        playSound(sound: "bet-coin", type: "wav")
                     } label: {
                         HStack{
                             Image("chips")
@@ -147,7 +143,7 @@ struct GameView: View {
             }
             .padding()
             .blur(radius:  viewModel.showEndGameModel ? 5 : 0 , opaque: false)
-            if viewModel.showEndGameModel {
+            if viewModel.showEndGameModel{
                 ZStack{
                     Color("ColorBlackTransparent")
                         .edgesIgnoringSafeArea(.all)
@@ -158,20 +154,21 @@ struct GameView: View {
                             .foregroundColor(.white)
                             .padding()
                             .frame(minWidth: 280, idealWidth: 280, maxWidth: 320)
-                            .background(Color.red)
+                            .background(Color("ColorRed"))
                         Spacer()
                         VStack{
-                            Image("chips")
+                            Image("lose_money")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 200)
-                            Text("You lost all your money!!! \n Good luck next time")
+                            Text("You lost all your money!!! \n \n Let's try again")
                                 .font(.system(.body, design: .rounded))
                                 .foregroundColor(.white)
                                 .multilineTextAlignment(.center)
                             Button{
                                 viewModel.showEndGameModel = false
-                                viewModel.credits = 100
+                                viewModel.isNewGame()
+                                playSound(sound: "new-game", type: "wav")
                             } label: {
                                 Text("New Game" .uppercased())
                                     .foregroundColor(.white)
@@ -179,25 +176,24 @@ struct GameView: View {
                                     .padding(.vertical, 10)
                                     .padding(.horizontal, 20)
                             }
-                            .background(Capsule().fill(.red))
+                            .background(Capsule().fill(Color("ColorRed")))
                             
                         }
                         Spacer()
-                    }
-                    
-                        
+                    }   
                 }
                 .frame(minWidth: 280, idealWidth: 280, maxWidth: 320, minHeight: 280, idealHeight: 300, maxHeight: 350, alignment: .center)
-                .background(Color.blue)
+                .background(Color("ColorBlue"))
                 .cornerRadius(20)
                 
             }
         }
+        .onAppear(perform: {playSound(sound: "new-game", type: "wav")})
     }
 }
 
-struct GameView_Previews: PreviewProvider {
+struct EasyGameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
+        EasyGameView()
     }
 }

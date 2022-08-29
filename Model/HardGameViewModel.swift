@@ -53,11 +53,13 @@ class HardGameViewModel: ObservableObject {
     
     //PLAYER WIN
     func playerWin(){
+        playSound(sound: "win", type: "wav")
         credits += 2 * betAmount
     }
     
     //PLAYER LOSE
     func playerLose(){
+        playSound(sound: "lose", type: "mp3")
         credits -= betAmount
     }
     

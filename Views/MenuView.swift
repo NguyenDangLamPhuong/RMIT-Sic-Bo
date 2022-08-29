@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct MenuView: View {
+    @StateObject private var viewModel = GameViewModel()
+    
     var body: some View {
         NavigationView {
             ZStack{
                 LinearGradient(gradient: Gradient(colors: [Color("ColorWelcomeYellow"), Color("ColorGreen")]), startPoint: .top, endPoint: .bottom)              .edgesIgnoringSafeArea(.all)
                 VStack{
                     //navigate to easy mode
-                    NavigationLink(destination: GameView()) {
+                    NavigationLink(destination: EasyGameView()) {
                         Capsule()
                             .fill(Color("ColorPink"))
                             .padding(8)
@@ -37,9 +39,7 @@ struct MenuView: View {
                     }
                     
                     //navigate to leaderboard
-                    Button(action: {
-                        
-                    }, label: {
+                    NavigationLink(destination: LeaderBoardView()) {
                         Capsule()
                             .fill(Color("ColorPink"))
                             .padding(8)
@@ -48,7 +48,7 @@ struct MenuView: View {
                                 .font(.system(.title3, design: .rounded))
                                 .fontWeight(.bold)
                                 .foregroundColor(.white))
-                    })
+                    }
                     
                     //navigate to guide view
                     NavigationLink(destination: GuideView()) {
@@ -63,7 +63,10 @@ struct MenuView: View {
                     }
                     
                 }
+                Spacer()
+                
             }
+            .onAppear(perform: {playSound(sound: "happy-tune", type: "mp3")})
         }
     }
 }

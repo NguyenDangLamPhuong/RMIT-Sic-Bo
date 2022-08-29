@@ -51,6 +51,7 @@ struct GuideView: View {
               .font(.system(.body, design: .rounded))
           
         }.navigationBarTitleDisplayMode(.inline)
+            
     }
 }
 

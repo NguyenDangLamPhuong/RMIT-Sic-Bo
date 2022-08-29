@@ -34,8 +34,6 @@ struct HomeView: View {
                         .foregroundColor(.red)
                 }
                 
-                
-                
                 Button(action: {
                     if self.username == storedUsername && self.password == storedpassword {
                         self.authenticationDidSucceed = true

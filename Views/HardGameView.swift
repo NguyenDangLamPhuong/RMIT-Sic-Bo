@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct HardGameView: View {
-    @StateObject private var viewModel = HardGameViewModel()
+    @StateObject private var viewModel = GameViewModel()
     
-    //RESTE GAME LOGIC
     var body: some View {
         ZStack{
             //background
@@ -26,13 +25,13 @@ struct HardGameView: View {
                 
                 HStack{
                     //Credits counter
-                    Text("Credits: ".uppercased() + String(viewModel.credits) )
+                    Text("Credits: ".uppercased() + String(viewModel.currentCredits) )
                         .modifier(scoreStyle())
                     
                     Spacer()
                     
-                    //Credits counter
-                    Text("High Score: ".uppercased() + String(viewModel.score) )
+                    //High score counter
+                    Text("High Score: ".uppercased() + String(viewModel.highscore) )
                         .modifier(scoreStyle())
                 }.padding()
                 
@@ -46,7 +45,6 @@ struct HardGameView: View {
                         .resizable()
                         .modifier(diceImageModifier())
                         .aspectRatio(1, contentMode: .fit)
-//                        .animation(<#T##animation: Animation?##Animation?#>, value: <#T##Equatable#>)
                     
                     Image(viewModel.dices[viewModel.numbers[1]])
                         .resizable()
@@ -67,7 +65,7 @@ struct HardGameView: View {
                         viewModel.playButton()
                         
                         //check winning
-                        viewModel.checkWinning()
+                        viewModel.checkHardWinning()
                         
                         //Game over
                         viewModel.isEndGame()
@@ -82,7 +80,6 @@ struct HardGameView: View {
                             .background(Color("ColorPink"))
                             .cornerRadius(20)
                             .modifier(ShadowModifier())
-                        
                     }
                     
                 }
@@ -90,16 +87,16 @@ struct HardGameView: View {
                 Spacer()
                 
                 HStack{
-                    
+                    //player bet 20 coins
                     Button {
                         viewModel.bet20()
+                        playSound(sound: "bet-coin", type: "wav")
                     } label: {
                         HStack{
                             Text("20")
                                 .modifier(BetCapsuleModifier())
                             Image("chips")
                                 .resizable()
-                            
                                 .opacity(viewModel.isChooseBet20 ? 1 : 0)
                                 .modifier(ChipModifier())
                         }
@@ -107,8 +104,10 @@ struct HardGameView: View {
                     
                     Spacer()
                     
+                    //player bet 10 coins
                     Button {
                         viewModel.bet10()
+                        playSound(sound: "bet-coin", type: "wav")
                     } label: {
                         HStack{
                             Image("chips")
@@ -134,20 +133,21 @@ struct HardGameView: View {
                             .foregroundColor(.white)
                             .padding()
                             .frame(minWidth: 280, idealWidth: 280, maxWidth: 320)
-                            .background(Color.red)
+                            .background(Color("ColorRed"))
                         Spacer()
                         VStack{
-                            Image("chips")
+                            Image("lose_money")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 200)
-                            Text("You lost all your money!!! \n Good luck next time")
+                            Text("You lost all your money!!! \n \n Let's try again")
                                 .font(.system(.body, design: .rounded))
                                 .foregroundColor(.white)
                                 .multilineTextAlignment(.center)
                             Button{
                                 viewModel.showEndGameModel = false
-                                viewModel.credits = 100
+                                viewModel.isNewGame()
+                                playSound(sound: "new-game", type: "wav")
                             } label: {
                                 Text("New Game" .uppercased())
                                     .foregroundColor(.white)
@@ -155,20 +155,20 @@ struct HardGameView: View {
                                     .padding(.vertical, 10)
                                     .padding(.horizontal, 20)
                             }
-                            .background(Capsule().fill(.red))
+                            .background(Capsule().fill(Color("ColorRed")))
                             
                         }
                         Spacer()
                     }
-                    
                         
                 }
                 .frame(minWidth: 280, idealWidth: 280, maxWidth: 320, minHeight: 280, idealHeight: 300, maxHeight: 350, alignment: .center)
-                .background(Color.blue)
+                .background(Color("ColorBlue"))
                 .cornerRadius(20)
                 
             }
         }
+        .onAppear(perform: {playSound(sound: "new-game", type: "wav")})
     }
 }
 

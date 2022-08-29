@@ -54,7 +54,6 @@ struct HomeView: View {
                     .frame(width: 250, height: 80)
                     .background(Color.yellow)
                     .cornerRadius(20.0)
-                    .animation(Animation.default)
             }
         }
     }

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct HardGameView: View {
     @StateObject private var viewModel = GameViewModel()
-    
+    @State private var animatingIcon = false
+
     var body: some View {
         ZStack{
             //background
@@ -45,15 +46,26 @@ struct HardGameView: View {
                         .resizable()
                         .modifier(diceImageModifier())
                         .aspectRatio(1, contentMode: .fit)
-                    
+                        .rotationEffect(.degrees(animatingIcon ? 0.0 : 1440.0))
+                        .animation(.easeOut, value: animatingIcon)
+                        .offset(y: animatingIcon ? 0 : -50)
+                        .animation(.easeOut, value: animatingIcon)
                     Image(viewModel.dices[viewModel.numbers[1]])
                         .resizable()
                         .modifier(diceImageModifier())
                         .aspectRatio(1, contentMode: .fit)
+                        .rotationEffect(.degrees(animatingIcon ? 0.0 : 1440.0))
+                        .animation(.easeOut, value: animatingIcon)
+                        .offset(y: animatingIcon ? 0 : -50)
+                        .animation(.easeOut, value: animatingIcon)
                     Image(viewModel.dices[viewModel.numbers[2]])
                         .resizable()
                         .modifier(diceImageModifier())
                         .aspectRatio(1, contentMode: .fit)
+                        .rotationEffect(.degrees(animatingIcon ? 0.0 : 1440.0))
+                        .animation(.easeOut, value: animatingIcon)
+                        .offset(y: animatingIcon ? 0 : -50)
+                        .animation(.easeOut, value: animatingIcon)
                     Spacer()
                 }
                 Spacer()
@@ -62,8 +74,14 @@ struct HardGameView: View {
                 HStack{
                     Button(action: {
                         //click small button to bet small
+                        withAnimation{
+                            self.animatingIcon = false
+                        }
                         viewModel.playButton()
                         
+                        withAnimation{
+                            self.animatingIcon = true
+                        }
                         //check winning
                         viewModel.checkHardWinning()
                         

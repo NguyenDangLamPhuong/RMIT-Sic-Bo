@@ -9,12 +9,12 @@ import SwiftUI
 
 struct EasyGameView: View {
     @StateObject private var viewModel = GameViewModel()
-   
+    @State private var animatingIcon = false
     var body: some View {
         ZStack{
             //background
             LinearGradient(gradient: Gradient(colors: [Color("ColorWelcomeYellow"), Color("ColorGreen")]), startPoint: .top, endPoint: .bottom)              .edgesIgnoringSafeArea(.all)
-
+            
             VStack{
                 //title
                 HStack{
@@ -45,15 +45,27 @@ struct EasyGameView: View {
                         .resizable()
                         .modifier(diceImageModifier())
                         .aspectRatio(1, contentMode: .fit)
+                        .rotationEffect(.degrees(animatingIcon ? 0.0 : 1440.0))
+                        .animation(.easeOut, value: animatingIcon)
+                        .offset(y: animatingIcon ? 0 : -50)
+                        .animation(.easeOut, value: animatingIcon)
                     
                     Image(viewModel.dices[viewModel.numbers[1]])
                         .resizable()
                         .modifier(diceImageModifier())
                         .aspectRatio(1, contentMode: .fit)
+                        .rotationEffect(.degrees(animatingIcon ? 0.0 : 1440.0))
+                        .animation(.easeOut, value: animatingIcon)
+                        .offset(y: animatingIcon ? 0 : -50)
+                        .animation(.easeOut, value: animatingIcon)
                     Image(viewModel.dices[viewModel.numbers[2]])
                         .resizable()
                         .modifier(diceImageModifier())
                         .aspectRatio(1, contentMode: .fit)
+                        .rotationEffect(.degrees(animatingIcon ? 0.0 : 1440.0))
+                        .animation(.easeOut, value: animatingIcon)
+                        .offset(y: animatingIcon ? 0 : -50)
+                        .animation(.easeOut, value: animatingIcon)
                     Spacer()
                 }
                 Spacer()
@@ -62,17 +74,23 @@ struct EasyGameView: View {
                 HStack{
                     Button(action: {
                         //click small button to bet small
+                        withAnimation{
+                            self.animatingIcon = false
+                        }
                         viewModel.playButton()
+                        withAnimation{
+                            self.animatingIcon = true
+                        }
                         
                         //check winning
                         viewModel.checkSmallWinning()
                         
                         //Game over
                         viewModel.isEndGame()
-
+                        
                     })
                     {
-                     Text("Small")
+                        Text("Small")
                             .bold()
                             .foregroundColor(.white)
                             .padding(.all, 10)
@@ -80,11 +98,17 @@ struct EasyGameView: View {
                             .background(Color("ColorPink"))
                             .cornerRadius(20)
                             .modifier(ShadowModifier())
-                            
+                        
                     }
                     Button(action: {
                         //click small button to bet small
+                        withAnimation{
+                            self.animatingIcon = false
+                        }
                         viewModel.playButton()
+                        withAnimation{
+                            self.animatingIcon = true
+                        }
                         
                         //check winning
                         viewModel.checkBigWinning()
@@ -93,7 +117,7 @@ struct EasyGameView: View {
                         viewModel.isEndGame()
                     })
                     {
-                     Text("Big")
+                        Text("Big")
                             .bold()
                             .foregroundColor(.white)
                             .padding(.all, 10)
@@ -180,7 +204,7 @@ struct EasyGameView: View {
                             
                         }
                         Spacer()
-                    }   
+                    }
                 }
                 .frame(minWidth: 280, idealWidth: 280, maxWidth: 320, minHeight: 280, idealHeight: 300, maxHeight: 350, alignment: .center)
                 .background(Color("ColorBlue"))
